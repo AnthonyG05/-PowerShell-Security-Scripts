@@ -1,7 +1,7 @@
 # A:
 function EncodeToBase64 {
 
-    $PlainText = Get-Content "\InPut" -Raw
+    $PlainText = Get-Content "\wordList.txt\" -Raw
     
     $encoding = [System.Text.Encoding]::Unicode.GetBytes( $PlainText)
     $EncodedString = [System.Convert]::ToBase64String($encoding)
@@ -14,7 +14,7 @@ EncodeToBase64
 
 # B:
 function DecodeFromBase64  {
-        $original = Get-Content "\InPut" -Raw
+        $original = Get-Content "\wordList.txt\" -Raw
         $EncodedString = Get-Content "\Outputs\" -Raw
         
         $decoded = [System.Convert]::FromBase64String($EncodedString)
